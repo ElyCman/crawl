@@ -6,7 +6,7 @@ from requests.exceptions import RequestException
 import re
 from config import *
 import json
-from multiprocessing import Pool  # 多进程法，比普通快
+from multiprocessing import Pool
 
 myheaders = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
