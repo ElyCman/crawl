@@ -146,7 +146,6 @@ def main(num):
     url = 'https://search.51job.com/list/000000,000000,0000,00,9,99,{0},2,{1}.html?'.format(keyword, num) + urlencode(data)
     html = get_page_index(url)
     for i in parse_result(html):
-        #write_to_file(i)
         save_to_mongo(i)
 
 if __name__ == '__main__':
