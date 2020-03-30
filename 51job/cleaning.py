@@ -104,14 +104,13 @@ def oth(degree, industry):
     data = pd.concat([degree, indr], axis = 1)
     return data
 
+def main():
+    data = dfunc(df)
+    area1 = area(data[['area']])
+    pub1 = pub(data[['publish_date']])
+    salary1 = salary(data[['salary']])
+    deg_indr = oth(data[['degree']], data[['industry']])
+    final_job = pd.concat([area1, pub1, salary1[['sal_low', 'sal_high', 'sal_avg']], deg_indr, data[['work_of_years', 'business_nature', 'people']]], axis = 1)
+    
 if __name__ == '__main__':
-    df = dfunc(df)
-    area1 = df[['area']]
-    area = area(area1)
-    publish = df[['publish_date']]
-    pub = pub(publish)
-    sal = df[['salary']]
-    salary = salary(sal)
-    deg_indr = oth(df[['degree']], df[['industry']])
-    final = pd.concat([area, pub, salary[['sal_low', 'sal_high', 'sal_avg']],deg_indr, df[['work_of_years', 'business_nature', 'people']]], axis = 1)
-
+    main()
