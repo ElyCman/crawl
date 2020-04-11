@@ -80,7 +80,7 @@ def salary(data):
 
 # 定义get_sal函数
 def get_sal(x):
-    t = x.strip()
+    t = str(x).strip()
     if '元/天' in t:
         tem = [float(i) for i in re.findall('[0-9]+\.?[0-9]*', t)]
         sal = [tem[0], tem[0]]
