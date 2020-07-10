@@ -154,12 +154,12 @@ def save_to_mongo(data):
 def main(page):
     proxy = get_proxy()
     if proxy:
-        url = get_url(KEYWORD, page)
-        html = get_index(url, proxy)
+        index_url = get_url(KEYWORD, page)
+        html = get_index(index_url, proxy)
         urls = parse_index(html)
         for url in urls:
             transf_url = transform_k_h_link(url)
-            article_url = get_real_link(url, transf_url, proxy)
+            article_url = get_real_link(index_url, transf_url, proxy)
             article_html = get_detail(article_url, proxy)
             if article_html:
                 article_data = parse_detail(article_html)
